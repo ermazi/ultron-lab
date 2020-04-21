@@ -6,9 +6,9 @@ import (
 )
 
 type Item struct {
-	Name string
+	Name   string
 	Expiry int
-	Index int
+	Index  int
 }
 
 type PriorityQueue []*Item
@@ -22,9 +22,9 @@ func (pq PriorityQueue) Less(i, j int) bool {
 }
 
 func (pq *PriorityQueue) Pop() interface{} {
-	item := (*pq)[len(*pq) - 1 ]
+	item := (*pq)[len(*pq)-1]
 	item.Index = -1
-	*pq = (*pq)[0: len(*pq) -1 ]
+	*pq = (*pq)[0 : len(*pq)-1]
 	return item
 }
 
@@ -35,8 +35,8 @@ func (pq *PriorityQueue) Push(x interface{}) {
 	*pq = append(*pq, item)
 }
 
-func (pq PriorityQueue) Swap(i, j int)  {
-	pq[i], pq[j] = pq[j],pq[i]
+func (pq PriorityQueue) Swap(i, j int) {
+	pq[i], pq[j] = pq[j], pq[i]
 	pq[i].Index = pq[j].Index
 	pq[j].Index = pq[i].Index
 }
