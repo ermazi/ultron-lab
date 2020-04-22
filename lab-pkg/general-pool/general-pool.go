@@ -6,7 +6,7 @@ import (
 	"net"
 	"sync"
 	"time"
-	"ultron-lab/lab-algri/backoff"
+	"ultron-lab/lab-pkg/backoff"
 
 	log "github.com/sirupsen/logrus"
 )

@@ -7,11 +7,11 @@ import (
 	"time"
 )
 
-var (
-	defaultFactor   float64 = 2
-	defaultJitter           = false
-	defaultMinDelay         = 100 * time.Millisecond
-	defaultMaxDelay         = 2 * time.Second
+const (
+	defaultFactor   = 2
+	defaultJitter   = false
+	defaultMinDelay = 100 * time.Millisecond
+	defaultMaxDelay = 2 * time.Second
 )
 
 type Backoff struct {
