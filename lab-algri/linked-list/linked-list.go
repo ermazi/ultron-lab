@@ -24,20 +24,43 @@ type node struct {
 	next *node
 }
 
-func (l LinkedList) Size() int {
-	panic("implement me")
+func (l *LinkedList) Size() int {
+	// 遍历链表获取
+	return l.size
 }
 
-func (l LinkedList) IsEmpty() bool {
-	panic("implement me")
+func (l *LinkedList) IsEmpty() bool {
+	return l.size == 0
 }
 
-func (l LinkedList) Contains(e interface{}) bool {
-	panic("implement me")
+func (l *LinkedList) Contains(e interface{}) bool {
+	n := l.node
+
+	for n != nil {
+		if n.val == e {
+			return true
+		}
+	}
+
+	return false
 }
 
-func (l LinkedList) Add(e interface{}) {
-	panic("implement me")
+func (l *LinkedList) Add(e interface{}) {
+	newNode := &node{
+		val:  e,
+		next: nil,
+	}
+	n := l.node
+
+	if n == nil {
+		n = newNode
+	}
+	for {
+		if n.next == nil {
+			n.next = newNode
+			break
+		}
+	}
 }
 
 func (l LinkedList) Get(i int) interface{} {
